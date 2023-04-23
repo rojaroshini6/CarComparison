@@ -2,14 +2,16 @@
 
 ## Before starting the coding
 
-* Make sure you've read all the descriptions
-* Ask questions if you have any
-* Set yourself a deadline for delivery of the challange and let us know this deadline. We will be expecting a code by that time.
+- Make sure you've read all the descriptions
+- Ask questions if you have any
+- Set yourself a deadline for delivery of the challange and let us know this deadline. We will be expecting a code by that time.
 
 ## Requirements
+
 Build a car comparison input form (See src\components\forms\carForm.vue). We expect that the form meets the following requirements:
 
 ### The customer needs to fill in the following information.
+
 - License plate
   - Make sure that the input follows the next format XXXXXX (Remove dashes and always use capital)
   - Retrieve information about vehicle from license plate (https://opendata.rdw.nl/resource/m9d7-ebf2.json?kenteken=05GFD9) and present brand (merk) and manufacturing year (datum_eerste_toelating) to the form UI. Please note: RDW webservice only accept capital letters 05GFD9 instead of 05gfd9)
@@ -44,39 +46,46 @@ Build a car comparison input form (See src\components\forms\carForm.vue). We exp
 - A button that sends all values selected into queryparams url https://en.wikipedia.org/wiki/Query_string
 
 ## Technical challenges
+
 - Split HTML into multiple components https://vuejs.org/api/sfc-spec.html
 - Add field validation https://vee-validate.logaretm.com/v4/
 - Build unit tests for the components
 
 ## UI
+
 For this section, you can choose your own implementation. This can be bootstrap, Tailwind or any other libraries you want or standard CSS.
 
 ## Technical details
+
 This project was generated with https://cli.vuejs.org/ with an addition for typescript and vue-class-component
 
 ## Project setup
+
 ```
 npm install
 ```
 
 ### Compiles and hot-reloads for development
+
 ```
 npm run serve
 ```
 
 ### Run your unit tests
+
 ```
 npm run test:unit
 ```
 
 ### Lints and fixes files
+
 ```
 npm run lint
 ```
 
 ## Project delivery
 
-* The delivery of the project will be accepted only in github or bitbucket.
-* Add this folder untouched as a `master` branch
-* Deliver your code in `feature` branch
-* Make a pull request from `feature` -> `master`
+- The delivery of the project will be accepted only in github or bitbucket.
+- Add this folder untouched as a `master` branch
+- Deliver your code in `feature` branch
+- Make a pull request from `feature` -> `master`
