@@ -3,6 +3,9 @@
     <div class="details-section">
       <div v-if="Object.keys(details).length != 0">
         <h3>{{ details.merk }}</h3>
+        <img
+          src="https://tesla-cdn.thron.com/delivery/public/image/tesla/195458a0-ff67-488c-b972-14d23d2c42fb/bvlatuR/std/1200x630/ms-homepage-social"
+        />
         <h3>Date of Manufacturing - {{ details.datum_eerste_toelating }}</h3>
       </div>
     </div>
@@ -137,17 +140,19 @@ export default class CarForm extends Vue {
   dob = false;
   claimFree = 0;
   claimFreeValues = 0;
+  housenumberValue = "";
+  houseAdditionValue = "";
   details = {};
 
   options = [
-    { text: "0 t/m 7500 KM", value: "A" },
-    { text: "7501 t/m 10000 KM", value: "B" },
-    { text: "10001 t/m 12000 KM", value: "C" },
-    { text: "12001 t/m 15000 KM", value: "C" },
-    { text: "15000 t/m 20000 KM", value: "C" },
-    { text: "20001 t/m 25000 KM", value: "C" },
-    { text: "25001 t/m 30000 KM", value: "C" },
-    { text: "30001 t/m 90000 KM", value: "C" },
+    { text: "0 t/m 7500 KM", value: "1" },
+    { text: "7501 t/m 10000 KM", value: "2" },
+    { text: "10001 t/m 12000 KM", value: "3" },
+    { text: "12001 t/m 15000 KM", value: "4" },
+    { text: "15000 t/m 20000 KM", value: "5" },
+    { text: "20001 t/m 25000 KM", value: "6" },
+    { text: "25001 t/m 30000 KM", value: "7" },
+    { text: "30001 t/m 90000 KM", value: "8" },
   ];
 
   selectedValue = this.options[1].value;
@@ -162,9 +167,17 @@ export default class CarForm extends Vue {
   }
 
   send(e: any): void {
-    const stringparam = `licencePlate=${this.licencePlateValue}&zipcode=${this.zipcodeValue}&birthdate=${this.birthdateValue}&claimFree=${this.claimFree}`;
+    const stringparam = `licencePlate=${this.licencePlateValue}&zipcode=${this.zipcodeValue}&birthdate=${this.birthdateValue}&claimFree=${this.claimFree}&housenumber=${this.housenumberValue}&houseAdditionValue=${this.houseAdditionValue}&Kilometrage=${this.selectedValue}`;
     const url = window.location.href;
-    window.location.href = url + stringparam;
+    if (
+      this.licencePlateValue != "" &&
+      this.zipcodeValue != "" &&
+      this.birthdateValue != "" &&
+      this.housenumberValue != "" &&
+      this.houseAdditionValue != ""
+    ) {
+      window.location.href = url + stringparam;
+    }
   }
   onSubmit(values: any) {
     //alert(this.selectedValue);
@@ -224,6 +237,22 @@ export default class CarForm extends Vue {
 
   set birthdate(value: string) {
     this.birthdateValue = value;
+  }
+
+  get housenumber() {
+    return this.housenumberValue;
+  }
+
+  set housenumber(value: string) {
+    this.housenumberValue = value;
+  }
+
+  get houseAddition() {
+    return this.houseAdditionValue;
+  }
+
+  set houseAddition(value: string) {
+    this.houseAdditionValue = value;
   }
 
   validatehouseAddition(value: string) {
