@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
     <header class="header">
-      <h1>Compare Cars side by side</h1>
+      <h1>Compare Cars</h1>
     </header>
     <main class="main">
       <div class="container">
